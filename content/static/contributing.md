@@ -1,6 +1,6 @@
 +++
 title = "Contribute"
-description = "Learn how to contribute to the Bioinformatics in Rust newsletter or submit your own crate, tool, or challenge."
+description = "Test page for showing differences in header."
 path = "contribute"
 +++
 
