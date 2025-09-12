@@ -60,7 +60,7 @@
             {% set url = item.url | replace(from='$BASE_URL', to=config.base_url) %}
             {% set is_active_link = current_url and url | trim_end_matches(pat="/") == current_url | trim_end_matches(pat="/") %}
             <li>
-                <a href="{{ url }}" title="{{ item.title }}">
+                <a href="{{ url }}" title="{{ item.title }}" {% if item.target %}target="{{ item.target }}"{% endif %}>
                     <span{% if is_active_link %} class="active"{% endif %}>{{ item.title }}</span>
                     {% if item.is_external and item.is_external == true %}
                     <svg fill="none" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24" height="12" width="12">
