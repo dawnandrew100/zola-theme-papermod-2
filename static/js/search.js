@@ -32,11 +32,22 @@ function initSearch() {
     var $searchResults = document.getElementById("searchResults"); // Ensure this matches your HTML
     var MAX_ITEMS = 10;
 
-    var options = {
-        bool: "AND",
-        fields: {
-            title: { boost: 2 },
-            body: { boost: 1 },
+  var options = {
+    bool: "AND",
+    fields: {
+      title: {boost: 2},
+      body: {boost: 1},
+    }
+  };
+  var currentTerm = "";
+  var index;
+
+  var initIndex = async function () {
+    if (index === undefined) {
+      index = fetch("/search_index.en.json") // Make sure the path to your search index is correct
+        .then(
+          async function(response) {
+            return await elasticlunr.Index.load(await response.json());
         }
     };
     var currentTerm = "";
