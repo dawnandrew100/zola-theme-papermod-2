@@ -58,7 +58,7 @@ navigation = [
     { url = "$BASE_URL/tags", title = "Tags" },
     { url = "$BASE_URL/search", title = "Search" },
     { url = "$BASE_URL/contribute", title = "Contributing" },
-    { url = "https://getzola.org/", title = "Zola", is_external = true },
+    { url = "https://getzola.org/", title = "Zola", target = "_blank", is_external = true },
 ]
 
 home_title = "PaperMod"
