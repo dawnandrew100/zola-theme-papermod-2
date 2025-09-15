@@ -48,8 +48,11 @@ function initSearch() {
         .then(
           async function(response) {
             return await elasticlunr.Index.load(await response.json());
-        }
-    };
+          }
+        );
+    }
+  };
+
     var currentTerm = "";
     var index;
 
