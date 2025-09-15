@@ -13,7 +13,7 @@ A work in progress port of the [hugo-PaperMod](https://github.com/adityatelange/
 
 Due to config changes introduced with Zola 0.19, only Zola 0.19.1 and later are currently supported.
 
-Demo @ https://cydave.github.io/zola-theme-papermod/
+Demo @ https://dawnandrew100.github.io/zola-theme-papermod-2/
 
 
 ## Features
@@ -27,10 +27,6 @@ Demo @ https://cydave.github.io/zola-theme-papermod/
 + [x] Syntax highlighting for code snippets (Zola's built-in syntax highlighting)
 + [x] Custom navigation
 + [x] Hide pages from home page by adding `extra = {exclude_from_home = true}` to front matter or adding markdown file to `content/static/` folder
-+ [ ] 3 Modes:
-    + [ ] Regular Mode
-    + [ ] Home-Info Mode
-    + [ ] Profile Mode
 + [x] Code copy buttons
 + [x] Search page
 + [ ] SEO Metadata
@@ -42,14 +38,14 @@ Demo @ https://cydave.github.io/zola-theme-papermod/
 1. Download the Theme
 
 ```
-git submodule add https://github.com/cydave/zola-theme-papermod themes/papermod
+git submodule add https://github.com/dawnandrew100/zola-theme-papermod-2 themes/papermod_2
 ```
 
-2. Add `theme = "papermod"` to your zola `config.toml`
+2. Add `theme = "papermod_2"` to your zola `config.toml`
 3. Copy over the example content to get started
 
 ```
-cp -r themes/papermod/content content
+cp -r themes/papermod_2/content content
 ```
 
 
@@ -61,6 +57,6 @@ Refer to [config.toml](config.toml) for available options.
 
 ## Contributing
 
-If you would like to help out porting hugo-Papermod to Zola feel free to pick
+If you would like to help out with porting hugo-Papermod to Zola, feel free to pick
 up a feature and start working on it. All help, no matter how small the
 contribution is highly appreciated.
