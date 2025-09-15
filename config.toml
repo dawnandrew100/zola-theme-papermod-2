@@ -1,6 +1,6 @@
 author = "cydave"
 title = "PaperMod"
-base_url = "https://cydave.github.io/zola-theme-papermod"
+base_url = "https://dawnandrew100.github.io/zola-theme-papermod-2/"
 compile_sass = true
 build_search_index = true
 generate_feeds = true
