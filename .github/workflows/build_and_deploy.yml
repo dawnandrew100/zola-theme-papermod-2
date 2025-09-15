@@ -1,0 +1,42 @@
+# https://github.com/shalzz/zola-deploy-action
+name: Zola on GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    name: Build for PR or Release Check
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout PR code
+        uses: actions/checkout@v4
+
+      - name: Build only (with drafts)
+        uses: shalzz/zola-deploy-action@v0.21.0
+        env:
+          BUILD_DIR: src
+          BUILD_ONLY: true
+          BUILD_FLAGS: --drafts
+        # No deploy — just validate build
+
+  build_and_deploy:
+    name: Build and Deploy Site
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release'
+    steps:
+      - name: Checkout release tag
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+
+      - name: Build and deploy
+        uses: shalzz/zola-deploy-action@v0.21.0
+        env:
+          BUILD_DIR: src
+          PAGES_BRANCH: gh-pages
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
