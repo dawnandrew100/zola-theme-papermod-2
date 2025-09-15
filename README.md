@@ -1,13 +1,10 @@
-# Archived - Zola PaperMod
-
-This repository has gained quite some traction, thank you so much to everyone who decided to fork and contribute <3.
-Unfortunately, I'm no longer a Zola user and am currently unable to keep a close eye on this repo. As such, I'm archiving this repo.
-
-I encourage fans of the original papermod theme (and this port) to create a fork (soft or hard) and re-publish it in the Zola theme index.
-
-Thanks for all the fish.
-
 # Zola PaperMod
+
+This repository is the unofficial successor to [cydave's papermod](https://github.com/cydave/zola-theme-papermod)!
+
+This theme is the backbone of my site [Seq.rs](https://github.com/dawnandrew100/seq.rs) and will primarily be updated to meet my needs for that site.
+
+With that being said, if others have additions they'd like to see, you're more than welcome to open a pull request on this fork!
 
 ![](screenshot.png)
 
