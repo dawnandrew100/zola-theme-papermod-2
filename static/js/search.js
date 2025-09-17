@@ -32,26 +32,26 @@ function initSearch() {
     var $searchResults = document.getElementById("searchResults"); // Ensure this matches your HTML
     var MAX_ITEMS = 10;
 
-  var options = {
-    bool: "AND",
-    fields: {
-      title: {boost: 2},
-      body: {boost: 1},
-    }
-  };
-  var currentTerm = "";
-  var index;
+    var options = {
+        bool: "AND",
+        fields: {
+            title: { boost: 2 },
+            body: { boost: 1 },
+        }
+    };
+    var currentTerm = "";
+    var index;
 
-  var initIndex = async function () {
-    if (index === undefined) {
-      index = fetch("/search_index.en.json") // Make sure the path to your search index is correct
-        .then(
-          async function(response) {
-            return await elasticlunr.Index.load(await response.json());
-          }
-        );
-    }
-  };
+    var initIndex = async function() {
+        if (index === undefined) {
+            index = fetch("/search_index.en.json") // Make sure the path to your search index is correct
+                .then(
+                    async function(response) {
+                        return await elasticlunr.Index.load(await response.json());
+                    }
+                );
+        }
+    };
 
     var currentTerm = "";
     var index;
@@ -59,6 +59,10 @@ function initSearch() {
     var initIndex = async function() {
         const baseTag = document.querySelector("base");
         const baseUrl = baseTag ? baseTag.href : null;
+        // Make sure that baseUrl ends with a forward slash
+        if (baseUrl && !baseUrl.endsWith("/")) {
+            baseUrl += "/";
+        }
         const searchIndexUrl = baseUrl ? baseUrl + "search_index.en.json" : "/search_index.en.json";
         console.log(searchIndexUrl);
         if (index === undefined) {
