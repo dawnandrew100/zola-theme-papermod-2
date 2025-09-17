@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://dawnandrew100.github.io/zola-theme-papermod-2/sitemap.xml
